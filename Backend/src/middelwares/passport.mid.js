@@ -57,26 +57,40 @@ passport.use("login", new LocalStrategy({ passReqToCallback: true, usernameField
 }));
 
 // Estrategia de Google
-passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http:belga.com.ar:8080/auth/google/callback"
-}, async (accessToken, refreshToken, profile, done) => {
-  try {
-    const user = await UserManager.readByGoogleId(profile.id);
-    if (user) {
+passport.use("google", new GoogleStrategy(
+  { 
+    clientID: process.env.GOOGLE_CLIENT_ID, 
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+    callbackURL: "http://localhost:8080/api/sessions/google/callback", 
+    passReqToCallback: true 
+  },
+  async (req, accessToken, refreshToken, profile, done) => {
+    try {
+      const email = profile.emails && profile.emails.length > 0 ? profile.emails[0].value : null;
+      if (!email) {
+        return done(new Error("No email found in profile"), null);
+      }
+
+      let user = await UserManager.readByEmail(email);
+      if (!user) {
+        user = {
+          email,
+          name: profile.displayName,
+          password: createHash(profile.id),  // Puede ser cualquier valor ya que no se usará realmente
+          photo: profile.photos && profile.photos.length > 0 ? profile.photos[0].value : ''
+        };
+        user = await UserManager.create(user);
+      }
+
       return done(null, user);
+    } catch (error) {
+      return done(error);
     }
-    const newUser = await UserManager.create({
-      googleId: profile.id,
-      email: profile.emails[0].value,
-      displayName: profile.displayName
-    });
-    return done(null, newUser);
-  } catch (error) {
-    return done(error);
   }
-}));
+));
+
+
+
 
 // Estrategia JWT
 passport.use(new JWTStrategy({

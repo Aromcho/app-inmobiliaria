@@ -192,6 +192,6 @@ propertySchema.index({
   geo_long: 1,
 });
 
-const Property = model('Property', propertySchema);
+const Property = model('propiedades', propertySchema);
 
 export default Property;
