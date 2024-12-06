@@ -57,11 +57,12 @@ passport.use("login", new LocalStrategy({ passReqToCallback: true, usernameField
 }));
 
 // Estrategia de Google
+// Estrategia de Google
 passport.use("google", new GoogleStrategy(
   { 
     clientID: process.env.GOOGLE_CLIENT_ID, 
     clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
-    callbackURL: "http://localhost:8080/api/sessions/google/callback", 
+    callbackURL: "http://belga.com.ar:6080/api/sessions/google/callback", 
     passReqToCallback: true 
   },
   async (req, accessToken, refreshToken, profile, done) => {
@@ -82,12 +83,17 @@ passport.use("google", new GoogleStrategy(
         user = await UserManager.create(user);
       }
 
-      return done(null, user);
+      // Crear el token para el usuario autenticado
+      const token = createToken({ id: user._id, role: user.role });
+      console.log('token:', token, 'user:', user);
+      // Devolver el usuario y el token
+      return done(null, { user, token });
     } catch (error) {
       return done(error);
     }
   }
 ));
+
 
 
 
