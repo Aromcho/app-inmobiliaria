@@ -4,25 +4,35 @@ import Fuse from 'fuse.js';
 import fs from 'fs';
 import path from 'path';
 
-const createProperty = async (req, res) => {
-  try {
-    const data = req.body;
-
-    // Verificar si la propiedad con el mismo ID ya existe
-    const existingProperty = await PropertyManager.readByCustomId(data.id);
-    if (existingProperty) {
-      return res.status(400).json({ message: 'Una propiedad con este ID ya existe' });
+const createProperty = (req, res, next) => {
+  uploadProperties(req, res, async (err) => {
+    if (err) {
+      return res.status(500).json({ error: 'Error al subir las imágenes' });
     }
 
-    // Crear la nueva propiedad usando el manager
-    const newProperty = await PropertyManager.create(data);
+    try {
+      const data = req.body;
+      const baseUrl = req.protocol + '://' + req.get('host');
 
-    res.status(201).json({ message: 'Propiedad creada exitosamente', property: newProperty });
-  } catch (error) {
-    console.error('Error al crear la propiedad:', error);
-    res.status(500).json({ message: 'Error al crear la propiedad', error });
-  }
+      // Si hay imágenes subidas, agregarlas al objeto data
+      const photos = req.files.map((file) => `${baseUrl}/Image-properties/${file.filename}`);
+
+      const propertyData = {
+        ...data,
+        photos,
+      };
+
+      // Crear la nueva propiedad usando el manager
+      const newProperty = await PropertyManager.create(propertyData);
+
+      res.status(201).json({ message: 'Propiedad creada exitosamente', property: newProperty });
+    } catch (error) {
+      console.error('Error al crear la propiedad:', error);
+      res.status(500).json({ message: 'Error al crear la propiedad', error });
+    }
+  });
 };
+
 
 // Buscar propiedad por ID
 const getpropertyById = async (req, res) => {

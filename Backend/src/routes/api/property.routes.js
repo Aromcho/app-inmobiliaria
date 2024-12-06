@@ -1,6 +1,7 @@
+// routes/api/property.routes.js
 import express from 'express';
 import {
-  createProperty, // Importamos la nueva función para crear una propiedad
+  createProperty,
   getPropertiesByUserId,
   getProperties,
   getPropertyById,
@@ -12,6 +13,7 @@ import {
   getpropertyById,
   autocompleteProperties,
 } from '../../controllers/property.controller.js';
+import uploadProperties from '../../middelwares/multerProperties.mid.js';
 
 const propertyDetail = express.Router();
 
@@ -25,8 +27,9 @@ propertyDetail.get('/favorites', getFavorites);
 propertyDetail.post('/contact', sendContactEmail);
 propertyDetail.get('/properties/ids', getAllPropertyIds);
 
-// Nueva ruta para crear una propiedad
-propertyDetail.post('/', createProperty);
+// Nueva ruta para crear una propiedad con subida de imágenes
+propertyDetail.post('/', uploadProperties, createProperty);
 propertyDetail.get('/publications/:user_id', getPropertiesByUserId);
+
 // Exportar el enrutador
 export default propertyDetail;
