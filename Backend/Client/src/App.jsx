@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { Helmet } from 'react-helmet-async';
 import Home from "./pages/Home/Home.jsx";
@@ -29,6 +29,15 @@ import Register from "./pages/Register/Register.jsx";
 import ReactGA from 'react-ga4';
 
 function App() {
+  return (
+    <AuthProvider> {/* Mueve el AuthProvider al nivel más alto */}
+      <MainApp />
+    </AuthProvider>
+  );
+}
+
+// Componente separado para manejar la lógica de useAuth
+function MainApp() {
   const location = useLocation();
   const { user } = useAuth();
   const [showFloatingLogin, setShowFloatingLogin] = useState(false);
@@ -50,39 +59,37 @@ function App() {
         <meta property="og:description" content="Encuentra las mejores propiedades en Belga Inmobiliaria." />
         <meta property="og:image" content="/path/to/default-image.jpg" />
       </Helmet>
-      <AuthProvider>
-        <FiltersProvider>
-          <Menu />
-          {showFloatingLogin && <LoginFloating />}
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/propertylist" element={<ItemListContainer />} />
-              <Route path="/propiedad/:id" element={<ItemDetailContainer />} />
-              <Route path="/propertyDetail/:id" element={<ItemDetailContainer />} />
-              <Route path="/404" element={<Error404 />} />
-              <Route path="/500" element={<Error500 />} /> 
-              <Route path="/quiero-vender" element={<QuieroVender />} />
-              <Route path="/emprendimientos" element={<Emprendimientos />} />
-              <Route path="/emprendimientos/:id" element={<DevelopmentsDetail />} />
-              <Route path="/admin" element={<Admin />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:id" element={<BlogDetail />} />
-              <Route path="/print" element={<Print />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/venta/:tipo" element={<ItemListContainer />} />
-              <Route path="*" element={<Navigate to="/404" />} />
-              <Route path="/conoce-belga" element={<ConoceBelga />} />
-              <Route path="/terminos-y-condiciones" element={<TerminosYCondiciones />} />
-              <Route path="/busquedas-guardadas" element={<BusquedasGuardadas />} />
-              <Route path="/favorites" element={<Favorites />} />  
-              <Route path="/destacados" element={<ItemListSelectedContainer/>} />
-            </Routes>
-          </Layout>
-          <Footer />
-        </FiltersProvider>
-      </AuthProvider>
+      <FiltersProvider>
+        <Menu />
+        {showFloatingLogin && <LoginFloating />}
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/propertylist" element={<ItemListContainer />} />
+            <Route path="/propiedad/:id" element={<ItemDetailContainer />} />
+            <Route path="/propertyDetail/:id" element={<ItemDetailContainer />} />
+            <Route path="/404" element={<Error404 />} />
+            <Route path="/500" element={<Error500 />} /> 
+            <Route path="/quiero-vender" element={<QuieroVender />} />
+            <Route path="/emprendimientos" element={<Emprendimientos />} />
+            <Route path="/emprendimientos/:id" element={<DevelopmentsDetail />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/print" element={<Print />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/venta/:tipo" element={<ItemListContainer />} />
+            <Route path="*" element={<Navigate to="/404" />} />
+            <Route path="/conoce-belga" element={<ConoceBelga />} />
+            <Route path="/terminos-y-condiciones" element={<TerminosYCondiciones />} />
+            <Route path="/busquedas-guardadas" element={<BusquedasGuardadas />} />
+            <Route path="/favorites" element={<Favorites />} />  
+            <Route path="/destacados" element={<ItemListSelectedContainer/>} />
+          </Routes>
+        </Layout>
+        <Footer />
+      </FiltersProvider>
     </>
   );
 }
