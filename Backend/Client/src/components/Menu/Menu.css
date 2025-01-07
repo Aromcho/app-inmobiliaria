@@ -3,7 +3,7 @@
   width: 100%;
   height: 32px;
   background-color: #000;
-  color: #fff;
+  color: #000;
   display: flex;
   justify-content: flex-end;
   padding: 0 20px;
@@ -58,13 +58,7 @@
   margin-right: 6px;
 }
 
-.menu-info-item a {
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  
-  align-items: center;
-}
+
 
 .menu-info-item a:hover {
   text-decoration: underline;
@@ -85,7 +79,7 @@
   transition: all 0.4s cubic-bezier(0.74, 0.04, 0.24, 1.04);
   z-index: 10000000;
   position: fixed;
-  top: 32px; /* Ajustado para la franja */
+  top: 0; /* Ajustado para la franja */
   left: 0;
 }
 
@@ -94,7 +88,7 @@
   background-color: #ffffff;
   color: #000000;
 
-  height: 55px;
+  height: 65px;
 
   top: 0;
 }
@@ -108,7 +102,7 @@
 }
 
 .logo-img {
-  width: 150px;
+  width: 80px;
 }
 
 .isobrand--img {
@@ -124,7 +118,6 @@
   max-width: none !important;
   justify-content: center;
   align-items: center;
-  background-color: #F1B332;
   margin-left: 10px;
   transition: all 0.4s cubic-bezier(0.74, 0.04, 0.24, 1.04);
   cursor: pointer;
@@ -147,7 +140,7 @@
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   position: relative;
   transition: color 0.3s ease-in-out;
 }
@@ -165,7 +158,7 @@
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   display: flex;
   align-items: center;
 }
@@ -191,7 +184,7 @@
 }
 
 .button--menu:hover {
-  color: #fff;
+  color: #000;
   background-color: #C62025;
   border-color: transparent;
 }
@@ -219,7 +212,7 @@
 .burger-cross-custom .line {
   width: 100%;
   height: 3px;
-  background-color: #fff;
+  background-color: #000;
   border-radius: 2px;
   position: absolute;
   left: 0;
@@ -360,7 +353,7 @@
   }
 
   .logo-img {
-    width: 120px;
+    width: 60px;
   }
 
   .burger-menu {
@@ -369,7 +362,7 @@
   }
 
   .burger-cross-custom .line {
-    background-color: #fff;
+    background-color: #000;
     display: block;
   }
   .burger-dark .line {

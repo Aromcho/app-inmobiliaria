@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LoginFloating from '../../components/LoginFloating/LoginFloating';
 import './Login.css';
 
 const Login = () => {
@@ -7,6 +8,9 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    /**
+     * 🟢 Iniciar sesión con email y contraseña
+     */
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -21,11 +25,8 @@ const Login = () => {
             });
 
             const data = await response.json();
-            console.log();
-            if (data.email.role === 'ADMIN') {	
-                // Pasa los datos del usuario a Admin usando navigate y state
+            if (data.user?.role === 'ADMIN') {
                 navigate('/admin', { state: { user: data.user } });
-                console.log('Login successful:', data);
             } else {
                 navigate('/', { state: { user: data.user } });
             }
@@ -33,6 +34,11 @@ const Login = () => {
             console.error('Error during login:', error);
         }
     };
+
+    /**
+     * 🟢 Iniciar sesión con Google automáticamente
+     */
+    
 
     return (
         <div className="login-container">
@@ -58,8 +64,11 @@ const Login = () => {
                         required
                     />
                 </div>
-                <button className='login-button' type="submit">Ingesar</button>
+                <button className='login-button' type="submit">Ingresar</button>
             </form>
+o
+            {/* Google Login Flotante */}
+            <LoginFloating />
         </div>
     );
 };

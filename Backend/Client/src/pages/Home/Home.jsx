@@ -7,14 +7,11 @@ import FooterInfo from "../../components/FooterInfo/FooterInfo.jsx"
 import Title from "../../components/Title/Title.jsx";
 import BackToTop from "../../components/BackToTop/BackToTop.jsx";
 import SearchHomeForm from "../../components/SearchHomeForm/SearchHomeForm.jsx";
-import SelectionListContainer from "../../components/SelectionListContainer/SelectionListContainer.jsx";
-import Button from "../../components/Button/Button.jsx";
-import ContactForm from "../../components/Forms/ContactForm/ContactForm.jsx";
 import HomeMap from "../../components/HomeMap/HomeMap.jsx";
 import { Container } from "react-bootstrap";
-import InversionSection from "../../components/InvertionHome/InvertionHome.jsx";
 import FromContact from "../../components/FormContact/FormContact.jsx";
-import Register from "../Register/Register.jsx";
+import CategoryCarouselWeb from "../../components/CategoryCarouselWeb/CategoryCarouselWeb.jsx";
+import FeaturedSection from "../../components/FeaturedSection/FeaturedSection.jsx";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -81,47 +78,22 @@ const Home = () => {
   return (
     <div className="layout transparent">
       <div className="hero-wrapper">
-        {!isMobile ? (
-          <video autoPlay muted loop className="video" src="/home-video.mp4">
-          </video>
-        ) : (
-          <img
-            src="/Foto_Portada.jpg"
-            alt="Portada"
-            className="w-100 h-100 position-absolute top-0 start-0"
-          />
-        )}
-
-        {/* Imagen de superposición que siempre cubre el video o la imagen */}
         
-        <div className="overlay"></div>
+          
         <div className="container-form-serch align--center">
           <SearchHomeForm formData={filters} setFormData={updateFilters} handleSubmit={handleSubmit} />
         </div>
       </div>
 
       <div className="seleccion-section">
-        <div className="seleccion">
-          <BackToTop color="red" />
-        </div>
-
-        <div className="container seleccion--container">
-          <Title
-            title="NUESTRA SELECCIÓN"
-            buttonStyle="outline red"
-            linkButton="/destacados"
-          />
-            <SelectionListContainer/>
-
-        </div>
+        <CategoryCarouselWeb />
       </div>
       {/*inversion sectin*/}
-      <InversionSection />
-      <div id="contact-section" className="contact-section">
-        <FooterInfo/>
-        <HomeMap/>
-        <FromContact/>
+      <div className="destacados">
+      <FeaturedSection />
       </div>
+      
+      
     </div>
   );
 };

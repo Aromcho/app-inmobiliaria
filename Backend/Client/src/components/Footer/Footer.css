@@ -1,171 +1,140 @@
-.footer-container {
-  width: 100%;
-  height: 30vh; /* Ajustar altura automáticamente */
-  position: relative;
-  background-color: #000; /* Fondo negro */
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 0; /* Añadir padding para espacio */
+/* 🌟 Estilo General del Footer */
+.footer {
+  background: #F9F9F9; /* Fondo gris claro */
+  color: #333;
+  padding: 30px 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.footer-wrapper {
-  width: 100%;
-  height: 30vh;
+/* 📦 Contenedor Principal */
+.footer-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.footer-left,
-.footer-center,
-.footer-right {
-  font-family: 'Montserrat', sans-serif;
-
-  height: 30vh;
-  flex: 1; /* Espacio equitativo para cada columna */
-  padding: 0 20px;
+/* 📝 Sección Individual */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
 }
 
-.footer-center {
-  width: 100%;
-  height: 30vh;
+/* 🌟 Títulos de Sección */
+.footer-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #8559A8;
+  text-transform: uppercase;
+}
+
+/* 📲 Redes Sociales */
+.footer-social .social-icons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #F1B332;
-  padding: 50px 20px; /* Reducir padding */
+  gap: 15px;
 }
 
-.footer-center img {
-  width: 60%;
-  height: auto; /* Ajustar altura automáticamente */
+.footer-social .social-icons a {
+  font-size: 24px;
+  color: #8559A8;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.footer-right .legal-text {
-  font-size: 10px;
-  margin-bottom: 10px;
-  margin-top: 20px;
+.footer-social .social-icons a:hover {
+  color: #6d3f98;
+  transform: scale(1.1);
 }
 
-.social-list {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-  margin-bottom: 20px;
-}
-
-.social-list a {
-  min-width: 0 !important;
-}
-
-.social--link svg {
-  color: #fff ;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.social--link:hover {
-  color: #f00; /* Cambia de color cuando el usuario pasa el mouse */
-}
-
-.legal-link .text-white {
-  text-decoration: none !important;
-  text-transform: none;
-  justify-content: start;
+/* 📝 Información */
+.footer-info p {
   font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #555;
 }
 
-.legal-link a:hover {
+.footer-info .footer-link {
+  font-size: 14px;
+  color: #8559A8;
+  text-decoration: none;
+}
+
+.footer-info .footer-link:hover {
   text-decoration: underline;
-  color: #F1B332;
-}
-.footer-right .mp {
-  font-size: 12px;
 }
 
-/* Ajustes para pantallas medianas (max-width: 768px) */
+/* 📱 Botones de Descarga */
+.footer-apps .app-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-apps .app-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.app-button.google-play {
+  background: #8559A8;
+}
+
+.app-button.app-store {
+  background: #6d3f98;
+}
+
+.app-button:hover {
+  transform: scale(1.05);
+}
+
+/* 🚀 Derechos Reservados */
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+/* 📱 Responsividad */
 @media (max-width: 768px) {
-  .footer-wrapper {
-    flex-direction: column; /* Para pantallas más pequeñas, organizar en una sola columna */
+  .footer-container {
+    flex-direction: column;
     text-align: center;
   }
 
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    order: unset; /* Permitir que los elementos se intercalen */
-  }
-  .footer-right
-   {
-    order: 1; /* Asegurar que footer-left esté arriba */
+  .footer-section {
+    margin-bottom: 20px;
   }
 
-  .footer-center,
-  .footer-left
-   {
-    order: 2; /* Ordenar footer-center y footer-right después */
-  }
-
-  .footer-left,
-  .footer-center,
-  .footer-right {
-    padding: 20px;
-    flex: 100%;
-    height: auto; /* Ajustar la altura automáticamente */
-  }
-
-  .social-list {
-    width: 85vw;
-    justify-content:space-between;
-  }
-
-  .footer-center img {
-    width: 70%; /* Ajustar el tamaño de la imagen */
-  }
-  .footer-right .legal-text {
-    text-align: start;
-    font-size: 10px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-  }
-  .legal-link .text-white {
-    text-decoration: none !important;
-    text-transform: none;
-    justify-content: start;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  .footer-right .mp {
-    text-align: start;
-
+  .social-icons {
+    justify-content: center;
   }
 }
 
-/* Ajustes para pantallas muy pequeñas (max-width: 480px) */
 @media (max-width: 480px) {
-  .footer-container {
-    padding: 10px 0; /* Reducir padding para pantallas muy pequeñas */
-    height: auto; /* Ajustar la altura automáticamente */
+  .footer {
+    padding: 20px 10px;
   }
 
-  .footer-wrapper {
-    height: auto; /* Ajustar la altura automáticamente */
+  .footer-title {
+    font-size: 16px;
   }
 
-  .footer-center {
-    padding: 30px 10px; /* Reducir padding */
-  }
-
-  .footer-center img {
-    width: 60%; /* Ajustar tamaño de la imagen para pantallas muy pequeñas */
-  }
-
-  .social--link {
-    font-size: 1.2rem; /* Reducir tamaño de los iconos sociales */
+  .social-icons a {
+    font-size: 20px;
   }
 }

@@ -27,20 +27,20 @@ sessionRouter.get("/google/callback", passport.authenticate("google", { session:
 });
 sessionRouter.get(
   '/google/web',
-  passport.authenticate('google', { scope: ['email', 'profile'] })
+  passport.authenticate('google-web', { scope: ['email', 'profile'] })
 );
 
 // Callback específico para la web
 sessionRouter.get(
   '/google/web/callback',
-  passport.authenticate('google', { session: false }),
+  passport.authenticate('google-web', { session: false }),
   (req, res, next) => {
     try {
       const token = req.user.token;
       const userName = req.user.user.name; // Extraer el nombre del usuario
 
       // Redirigir a la web con el token y el nombre del usuario
-      return res.redirect(`http://localhost:5173//login-success?token=${token}&name=${encodeURIComponent(userName)}`);
+      return res.redirect(`http://localhost:5173/?token=${token}&name=${encodeURIComponent(userName)}`);
     } catch (error) {
       return next(error);
     }

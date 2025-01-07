@@ -93,6 +93,41 @@ passport.use("google", new GoogleStrategy(
     }
   }
 ));
+passport.use("google-web", new GoogleStrategy(
+  { 
+    clientID: process.env.GOOGLE_CLIENT_ID, 
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
+    callbackURL: "http://localhost:6080/api/sessions/google/web/callback", 
+    passReqToCallback: true 
+  },
+  async (req, accessToken, refreshToken, profile, done) => {
+    try {
+      const email = profile.emails && profile.emails.length > 0 ? profile.emails[0].value : null;
+      if (!email) {
+        return done(new Error("No email found in profile"), null);
+      }
+
+      let user = await UserManager.readByEmail(email);
+      if (!user) {
+        user = {
+          email,
+          name: profile.displayName,
+          password: createHash(profile.id),  // Puede ser cualquier valor ya que no se usará realmente
+          photo: profile.photos && profile.photos.length > 0 ? profile.photos[0].value : ''
+        };
+        user = await UserManager.create(user);
+      }
+
+      // Crear el token para el usuario autenticado
+      const token = createToken({ id: user._id, role: user.role });
+      console.log('token:', token, 'user:', user);
+      // Devolver el usuario y el token
+      return done(null, { user, token });
+    } catch (error) {
+      return done(error);
+    }
+  }
+));
 
 
 

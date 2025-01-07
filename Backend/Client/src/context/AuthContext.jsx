@@ -64,7 +64,7 @@ export const AuthProvider = ({ children }) => {
    * Inicio de sesión con Google
    */
   const loginWithGoogle = () => {
-    window.location.href = 'http://localhost:5173//api/sessions/google/web';
+    window.location.href = 'http://localhost:5173/api/sessions/google/web';
   };
 
   return (

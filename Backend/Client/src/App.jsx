@@ -29,39 +29,19 @@ import Register from "./pages/Register/Register.jsx";
 import ReactGA from 'react-ga4';
 
 function App() {
-  return (
-    <AuthProvider> {/* Mueve el AuthProvider al nivel más alto */}
-      <MainApp />
-    </AuthProvider>
-  );
-}
-
-// Componente separado para manejar la lógica de useAuth
-function MainApp() {
   const location = useLocation();
-  const { user } = useAuth();
-  const [showFloatingLogin, setShowFloatingLogin] = useState(false);
 
   useEffect(() => {
     ReactGA.send({ hitType: "pageview", page: location.pathname });
   }, [location]);
 
-  useEffect(() => {
-    setShowFloatingLogin(!user);
-  }, [user]);
+  
 
   return (
-    <>
-      <Helmet>
-        <title>Belga Inmobiliaria</title>
-        <meta name="description" content="Encuentra las mejores propiedades en Belga Inmobiliaria." />
-        <meta property="og:title" content="Belga Inmobiliaria" />
-        <meta property="og:description" content="Encuentra las mejores propiedades en Belga Inmobiliaria." />
-        <meta property="og:image" content="/path/to/default-image.jpg" />
-      </Helmet>
+    <AuthProvider>
       <FiltersProvider>
         <Menu />
-        {showFloatingLogin && <LoginFloating />}
+        
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -90,7 +70,7 @@ function MainApp() {
         </Layout>
         <Footer />
       </FiltersProvider>
-    </>
+    </AuthProvider>
   );
 }
 

@@ -1,6 +1,7 @@
 .hero-wrapper {
+  background: linear-gradient(to bottom, #8559A8, transparent);
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -71,6 +72,11 @@
   z-index: 999999999999;
   padding: 80px 0;
   margin: 0 auto;
+}
+
+.destacados {
+  position: relative;
+  top: -100px;
 }
 
 
@@ -205,10 +211,9 @@
 }
 
 .seleccion-section {
-  width: 100%;
+  width: 90%;
   background-color: #ffffff;
   margin: 0 auto;
-  padding: 80px 0;
   position: relative;
 }
 

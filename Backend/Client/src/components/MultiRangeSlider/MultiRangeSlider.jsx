@@ -43,12 +43,12 @@ const MultiRangeSlider = ({ min, max, step, defaultValue, onChange }) => {
           max={max}
           step={step}
           sx={{
-            color: '#F1B332',
+            color: '#8559A8',
             '& .MuiSlider-thumb': {
-              backgroundColor: '#F1B332',
+              backgroundColor: '#8559A8',
             },
             '& .MuiSlider-track': {
-              backgroundColor: '#F1B332',
+              backgroundColor: '#8559A8',
             },
             '& .MuiSlider-rail': {
               backgroundColor: '#ddd',
