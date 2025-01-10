@@ -12,12 +12,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './ItemDetail.css';
 import Print from '../Print/Print';
-import FormContact from '../FormContact/FormContact';
 import { HeartIcon, MailIcon, PrintIcon, WhatsappIcon } from '../Icons/Icons';
-import VenderForm from '../Forms/VenderForm/VenderForm';
-import ContacForm from '../Forms/ContactForm/ContactForm';
 import { Skeleton, Dialog, DialogContent, IconButton } from '@mui/material';
-import Lightbox from 'react-spring-lightbox';
 import { Close as CloseIcon } from '@mui/icons-material';
 import Contenido from './Contenido/Contenido';
 
@@ -466,9 +462,7 @@ const ItemDetail = ({ property, planos }) => {
       <div ref={printRef} className="d-none">
         <Print property={property} />
       </div>
-      <div className='form-detail-container'>
-        <ContacForm />
-      </div>
+      
     </Container>
   );
 };

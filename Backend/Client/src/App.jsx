@@ -10,12 +10,10 @@ import BusquedasGuardadas from "./pages/BusquedasGuardadas/BusquedasGuardadas.js
 import ConoceBelga from "./pages/ConoceBelga/ConoceBelga.jsx";
 import Emprendimientos from "./pages/Emprendimientos/Emprendimientos.jsx";
 import Favorites from "./pages/Favorites/Favorites.jsx";
-import QuieroVender from "./pages/QuieroVender/QuieroVender.jsx";
-import ItemListSelectedContainer from "./components/ItemSelectedListContainer/ItemSelectedListContainer.jsx";
+import Publicar from "./pages/Publicar/Publicar.jsx";
 import TerminosYCondiciones from "./pages/Terminos/TerminosYCondiciones.jsx";
 import Error404 from "./pages/404/404.jsx";
 import Error500 from "./pages/500/500.jsx";
-import LoginFloating from "./components/LoginFloating/LoginFloating.jsx";
 import { FiltersProvider } from './context/FiltersContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import DevelopmentsDetail from "./components/DevelopmentsDetail/DevelopmentsDetail.jsx";
@@ -50,7 +48,7 @@ function App() {
             <Route path="/propertyDetail/:id" element={<ItemDetailContainer />} />
             <Route path="/404" element={<Error404 />} />
             <Route path="/500" element={<Error500 />} /> 
-            <Route path="/quiero-vender" element={<QuieroVender />} />
+            <Route path="/publicar" element={<Publicar />} />
             <Route path="/emprendimientos" element={<Emprendimientos />} />
             <Route path="/emprendimientos/:id" element={<DevelopmentsDetail />} />
             <Route path="/admin" element={<Admin />} />
@@ -65,7 +63,6 @@ function App() {
             <Route path="/terminos-y-condiciones" element={<TerminosYCondiciones />} />
             <Route path="/busquedas-guardadas" element={<BusquedasGuardadas />} />
             <Route path="/favorites" element={<Favorites />} />  
-            <Route path="/destacados" element={<ItemListSelectedContainer/>} />
           </Routes>
         </Layout>
         <Footer />

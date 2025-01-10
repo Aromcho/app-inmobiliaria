@@ -47,14 +47,10 @@ export const Menu = () => {
           <Nav.Link as={Link} to="emprendimientos" className="menu--link">
             Emprendimientos
           </Nav.Link>
-          <Button
-            as={Link}
-            to={PATHS.QUIEROVENDER}
-            className="button--menu"
-            variant="outline-dark"
-          >
-            Quiero vender
-          </Button>
+          
+            <Nav.Link as={Link} to="/publicar" className="menu--link">
+            Publicar
+            </Nav.Link>
         </Nav>
 
         {/* Botón hamburguesa */}
