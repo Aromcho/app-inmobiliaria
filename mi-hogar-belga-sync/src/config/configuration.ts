@@ -1,3 +1,5 @@
 export default () => ({
-    MONGO_URI: process.env.MONGO_URI || 'mongodb+srv://aroncho6:26398322@cluster0.vmqsd6p.mongodb.net/MiHogarDB',
-});
+    tokkoToken: process.env.TOKKO_TOKEN || '',
+    agenciaNombre: process.env.AGENCIA_NOMBRE || '',
+    port: process.env.PORT || 3000,
+  });

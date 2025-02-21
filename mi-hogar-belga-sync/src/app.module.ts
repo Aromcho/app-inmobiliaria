@@ -5,12 +5,14 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from './config/configuration';
 import { PropertyModule } from './property/property.module';
 import { DatabaseModule } from './database/database.module';
+import { envValidationSchema } from './config/env.validation';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       load: [configuration],
       isGlobal: true,
+      validationSchema: envValidationSchema,
     }),
     MongooseModule.forRootAsync({
       imports: [ConfigModule],

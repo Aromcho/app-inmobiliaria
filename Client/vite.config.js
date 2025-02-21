@@ -13,7 +13,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://belga.com.ar:6080',
+        target: 'http://localhost:6080',
         changeOrigin: true,
         secure: false,
       },

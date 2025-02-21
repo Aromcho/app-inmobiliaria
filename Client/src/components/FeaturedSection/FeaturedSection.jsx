@@ -23,7 +23,7 @@ const FeaturedSection = () => {
     const fetchData = async (type) => {
       setLoading((prev) => ({ ...prev, [type]: true }));
       try {
-        const response = await axios.get('http://belga.com.ar:6080/api/property/properties/', {
+        const response = await axios.get('/api/property/properties/', {
           params: { limit: 5, property_type: type },
         });
         setData((prev) => ({ ...prev, [type]: response.data.objects }));

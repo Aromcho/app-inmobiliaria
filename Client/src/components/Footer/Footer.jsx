@@ -6,7 +6,6 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className="footer">
-      {/* 🌟 Sección Principal */}
       <div className="footer-container">
 
         {/* 📲 Redes Sociales */}
@@ -40,14 +39,13 @@ const Footer = () => {
             <a href="#" target="_blank" rel="noopener noreferrer" className="app-button app-store">
               <FaApple /> App Store
             </a>
+            <p>&copy; {new Date().getFullYear()} Mi Hogar. Todos los derechos reservados.</p>
+
           </div>
         </div>
       </div>
 
-      {/* 🚀 Derechos Reservados */}
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Mi Hogar. Todos los derechos reservados.</p>
-      </div>
+      
     </footer>
   );
 };

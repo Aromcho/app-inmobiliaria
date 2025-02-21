@@ -52,7 +52,7 @@ app.use(cookieParser(process.env.SECRET));
 // Servir la carpeta de imágenes de manera estática
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-app.use(express.static('public'));
+app.use(express.static('dist'));
 app.use('/api', router);
 app.get('/propiedad/:id', renderPropertySEO);
 app.get('/noticia/:id', renderArticuleSEO);
@@ -77,7 +77,7 @@ app.get('/noticia/:id', renderArticuleSEO);
 
 // Ruta catch-all para servir index.html
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "public", "index.html"));
+  res.sendFile(path.resolve(__dirname, "dist", "index.html"));
 });
 
 // Manejo de errores
