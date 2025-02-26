@@ -33,7 +33,7 @@
   
   .category-icon {
     font-size: 2rem;
-    color: #8559A8;
+    color: var(--secondary-color);
     margin-bottom: 10px;
   }
   
@@ -79,7 +79,7 @@
   
   .category-card-mobile .category-icon {
     font-size: 2rem;
-    color: #8559A8;
+    color: var(--secondary-color);
   }
   
   .category-card-mobile .category-label {

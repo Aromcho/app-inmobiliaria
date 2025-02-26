@@ -19,7 +19,7 @@
 
 .price-icon {
   margin-right: 10px;
-  color: #8559A8; /* Color del ícono */
+  color: var(--secondary-color); /* Color del ícono */
 }
 
 .price-input-wrapper {

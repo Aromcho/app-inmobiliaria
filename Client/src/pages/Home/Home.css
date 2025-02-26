@@ -1,5 +1,5 @@
 .hero-wrapper {
-  background: linear-gradient(to bottom, #8559A8, transparent);
+  background: linear-gradient(to bottom, var(--secondary-color), transparent);
   width: 100%;
   height: 100%;
   overflow: hidden;

@@ -18,10 +18,10 @@ sessionRouter.get("/google/callback", passport.authenticate("google", { session:
   try {
     const token = req.user.token;
     const userName = req.user.user.name; // Extraer el nombre del usuario
+    const userId = req.user.user._id;
 
     // Redirigir al deep link de la aplicación móvil con el token y el nombre del usuario
-    return res.redirect(`exp://192.168.0.16:8081?token=${token}&name=${encodeURIComponent(userName)}`);
-  } catch (error) {
+    return res.redirect(`exp://192.168.0.3:8081?token=${token}&name=${encodeURIComponent(userName)}&user_id=${userId}`);  } catch (error) {
     return next(error);
   }
 });

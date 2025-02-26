@@ -62,7 +62,7 @@ passport.use("google", new GoogleStrategy(
   { 
     clientID: process.env.GOOGLE_CLIENT_ID, 
     clientSecret: process.env.GOOGLE_CLIENT_SECRET, 
-    callbackURL: "http://belga.com.ar:6080/api/sessions/google/callback", 
+    callbackURL: "https://mi-hogar.online/api/sessions/google/callback", 
     passReqToCallback: true 
   },
   async (req, accessToken, refreshToken, profile, done) => {

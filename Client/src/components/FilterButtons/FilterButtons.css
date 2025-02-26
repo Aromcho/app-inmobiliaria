@@ -21,7 +21,7 @@
 }
 
 .filter-button.active {
-  background: #8559A8;
+  background: var(--secondary-color);
   color: white;
 }
 

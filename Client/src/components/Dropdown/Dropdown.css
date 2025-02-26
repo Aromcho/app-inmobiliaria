@@ -23,11 +23,11 @@
 }
 
 .dropdown-item-custom:hover {
-  background-color: #F1B332; /* El amarillo de la paleta */
+  background-color: var(--secondary-color); /* El amarillo de la paleta */
 }
 
 .dropdown-item-custom:active {
-  background-color: #F1B332; /* El amarillo de la paleta */
+  background-color: var(--secondary-color); /* El amarillo de la paleta */
 }
 
 .dropdown-toggle::after {

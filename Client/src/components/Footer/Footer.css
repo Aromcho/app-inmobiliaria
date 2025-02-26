@@ -28,7 +28,7 @@
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #8559A8;
+  color: var(--secondary-color);
   text-transform: uppercase;
 }
 
@@ -40,12 +40,12 @@
 
 .footer-social .social-icons a {
   font-size: 24px;
-  color: #8559A8;
+  color: var(--secondary-color);
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-social .social-icons a:hover {
-  color: #6d3f98;
+  color: var(--primary-color);
   transform: scale(1.1);
 }
 
@@ -59,7 +59,7 @@
 
 .footer-info .footer-link {
   font-size: 14px;
-  color: #8559A8;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
@@ -88,11 +88,11 @@
 }
 
 .app-button.google-play {
-  background: #8559A8;
+  background: var(--secondary-color);
 }
 
 .app-button.app-store {
-  background: #6d3f98;
+  background: var(--secondary-color);
 }
 
 .app-button:hover {
