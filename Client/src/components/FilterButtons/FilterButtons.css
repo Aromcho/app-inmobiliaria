@@ -10,10 +10,11 @@
   padding: 10px;
   border: none;
   border-radius: 4px;
-  background: white;
+  background: rgb(228, 226, 226);
   cursor: pointer;
   font-size: 14px;
   transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .filter-button:hover {
@@ -21,7 +22,7 @@
 }
 
 .filter-button.active {
-  background: var(--secondary-color);
+  background: var(--secondary-color) !important;
   color: white;
 }
 
@@ -105,13 +106,14 @@
   }
 
   .filter-button {
-    height: 50px;
+    height: 80px;
     font-size: 12px;
     padding: 8px;
   }
 
   .map-button {
-    border-radius: 50%;
+    flex: 0.87;
+    border-radius: 50px;
   }
   .map-modal-content {
     width: 95%;

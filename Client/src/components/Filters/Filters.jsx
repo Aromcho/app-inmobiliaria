@@ -18,7 +18,8 @@ const Filters = ({ onSubmit }) => {
 
   const operationTypeOptions = [
     { value: 'Venta', label: 'Venta' },
-    { value: 'Alquiler', label: 'Alquiler' }
+    { value: 'Alquiler', label: 'Alquiler' },
+    { value: 'Alquiler Temporario', label: 'Alquiler Temporario' }
   ];
 
   const propertyTypeOptions = [
@@ -107,38 +108,9 @@ const Filters = ({ onSubmit }) => {
     <Form onSubmit={handleSubmit} className="filter-form">
       {/* Input para búsqueda general */}
       <Row>
-        <Col>
-          <div className="input-icon-wrapper">
-            <FaSearch className="input-icon-placeholder" />
-            <Form.Control
-              type="text"
-              className="filter-input input-with-icon"
-              value={filters.searchQuery} // Usamos el estado local "query"
-              placeholder="Buscar dirección, título, barrio, etc..."
-              onChange={handleSearchChange}
-            />
-            {autocompleteSuggestions.length > 0 && (
-              <div className="autocomplete-suggestions">
-                <ul>
-                  {autocompleteSuggestions.map((suggestion) => (
-                    <li
-                      key={suggestion.value}
-                      onClick={() => handleSuggestionSelect(suggestion)}
-                    >
-                     {suggestion.value} {suggestion.secundvalue && ` - ${suggestion.secundvalue}`}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </Col>
+        
 
-        <Col md="auto">
-          <Button className="search-button search-button-filter" type="submit">
-            BUSCAR
-          </Button>
-        </Col>
+        
       </Row>
 
       {/* Botón para mostrar/ocultar filtros en versión móvil */}

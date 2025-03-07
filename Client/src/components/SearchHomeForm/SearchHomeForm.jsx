@@ -89,16 +89,7 @@ const SearchHomeForm = ({ handleSubmit }) => {
             </div>
           </Col>
         </Row>
-        <MultiRangeSlider
-              min={0}
-              max={3000000}
-              step={20000}
-              defaultValue={[filters.price_from || 0, filters.price_to || 3000000]}
-              onChange={(newValue) => {
-                handleFormChange('price_from', newValue[0]);
-                handleFormChange('price_to', newValue[1]);
-              }}
-            />
+        
         {/* Botones de Buscar y Filtros Avanzados */}
         <Row className="filter-row mt-2">
           <Col>
@@ -107,7 +98,7 @@ const SearchHomeForm = ({ handleSubmit }) => {
                 Buscar
               </Button>
               <Button className="filters-button" variant="outline-secondary" onClick={toggleAdvancedFilters}>
-                <FaSlidersH /> Filtros Avanzados
+                <FaSlidersH /> Filtros 
               </Button>
             </div>
           </Col>

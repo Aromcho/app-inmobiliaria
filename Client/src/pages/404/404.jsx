@@ -17,29 +17,7 @@ const Error404 = () => {
         </div>
 
         <div className="container">
-          <div className="wrapper-content">
-            <div className="wrapper-image">
-              <img src="/images/404_image.svg" className="image" alt="Error 404" />
-            </div>
-            <div className="squares-wrapper">
-              <div className="square red"></div>
-              <div className="square black"></div>
-
-              <div className="text-wrapper">
-                <div className="top-text">Ups, no encontramos esta propiedad pero...</div>
-                <div className="text">Lo que buscás está a la vuelta de la esquina.</div>
-              </div>
-
-              <div className="button-wrapper">
-                <Button
-                  className="button--square"
-                  text="Encontralo Acá"
-                  type="secondary shine"
-                  link="/venta"
-                />
-              </div>
-            </div>
-          </div>
+          <h1>PAGINA NO ENCONTRADA</h1>
         </div>
       </div>
   );
