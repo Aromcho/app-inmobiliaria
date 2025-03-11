@@ -60,7 +60,7 @@ const SearchHomeForm = ({ handleSubmit }) => {
   return (
     <Container className="search-form">
       <FilterButtons />
-      <Form onSubmit={handleSubmit} className="">
+      <Form onSubmit={handleSubmit} className="serach-form-container">
         
 
         {/* Campo de Búsqueda */}

@@ -88,9 +88,9 @@ export const Menu = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto menu-config">
-            <div className="action-button">Venta</div>
-            <div className="action-button">Alquiler</div>
-            <div className="action-button">Alquiler temporal</div>
+            <Link to="/venta" className="action-button">Venta</Link>
+            <Link to="/alquiler" className="action-button">Alquiler</Link>
+            <Link to="/alquiler-temporal" className="action-button">Alquiler temporal</Link>
           </Nav>
         </Navbar.Collapse>
       </div>

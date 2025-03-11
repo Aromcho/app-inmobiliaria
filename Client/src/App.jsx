@@ -24,6 +24,9 @@ import BlogDetail from "./pages/Blog/BlogDetail/BlogDetail.jsx";
 import Print from "./components/Print/Print.jsx";
 import Login from "./pages/Login/Login.jsx";
 import Register from "./pages/Register/Register.jsx";
+import Venta from "./pages/Venta/Venta.jsx";
+import Alquiler from "./pages/Alquiler/Alquiler.jsx";
+import AlquilerTemporal from "./pages/AlquilerTemporal/AlquilerTemporal.jsx";
 import ReactGA from 'react-ga4';
 
 function App() {
@@ -63,6 +66,9 @@ function App() {
             <Route path="/terminos-y-condiciones" element={<TerminosYCondiciones />} />
             <Route path="/busquedas-guardadas" element={<BusquedasGuardadas />} />
             <Route path="/favorites" element={<Favorites />} />  
+            <Route path="/venta" element={<Venta />} /> 
+            <Route path="/alquiler" element={<Alquiler />} /> 
+            <Route path="/alquiler-temporal" element={<AlquilerTemporal />} /> 
           </Routes>
         </Layout>
         <Footer />

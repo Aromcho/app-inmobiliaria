@@ -4,6 +4,13 @@
   padding: 15px;
   z-index: 9999;
 }
+.serach-form-container {
+  background: rgba(228, 226, 226, 0.5); /* Fondo semi-transparente */
+  padding: 10px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+}
 
 .input-icon-wrapper {
   position: relative;
@@ -147,8 +154,9 @@
 @media screen and (max-width: 1100px) {
   .search-form {
     width: 100%;
-    height: 60vh;
+    height: 40vh;
     padding: 0px;
+    margin-top: 100px;
   }
 }
 
@@ -172,9 +180,11 @@
 
   .search-form,
   .filter-input,
-  .search-button,
   .button--vender {
     width: 100% !important;
+  }
+  .search-button {
+    width: 50% !important;
   }
 
   .button--vender {

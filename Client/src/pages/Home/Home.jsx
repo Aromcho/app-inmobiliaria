@@ -77,9 +77,8 @@ const Home = () => {
   return (
     <div className="layout transparent">
       <div className="hero-wrapper">
-        
-          
-        <div className="container-form-serch align--center">
+        <img src="./fondo.jpg" alt="Fondo" className="hero-background" />
+        <div className="container-form-serch">
           <SearchHomeForm formData={filters} setFormData={updateFilters} handleSubmit={handleSubmit} />
         </div>
       </div>

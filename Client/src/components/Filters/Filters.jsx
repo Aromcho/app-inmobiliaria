@@ -124,6 +124,14 @@ const Filters = ({ onSubmit }) => {
           >
             {showFilters ? 'Ocultar Filtros' : 'Mostrar Filtros'}
           </Button>
+          <Button
+            onClick={() => setShowFilters(!showFilters)}
+            aria-controls="filters-collapse"
+            aria-expanded={showFilters}
+            className="search-button"
+          >
+            {showFilters ? 'cerrar' :'mapa'}
+          </Button>
         </Col>
       </Row>
 
