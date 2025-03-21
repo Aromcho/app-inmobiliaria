@@ -1,6 +1,7 @@
 /* 🛠️ General */
 .card-item {
-  min-width: 200px;
+  min-width: 400px;
+  height: 400px;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -14,8 +15,12 @@
 }
 
 .link-full {
+  height: 400px;
   text-decoration: none;
   color: inherit;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 /* 🖼️ Imagen y Favorito */
@@ -25,7 +30,7 @@
 
 .card-image {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -95,6 +100,23 @@
   gap: 5px;
 }
 
-/* ✅ RESPONSIVE DESIGN */
-
-/* 🌐 Versión Escritorio */
+/* 🌐 Responsive Design */
+@media (max-width: 768px) {
+  .card-item {
+    min-width: 85vw;
+    height: auto;
+  }
+  .link-full {
+    height: 350px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
