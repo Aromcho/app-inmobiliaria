@@ -98,7 +98,7 @@ const SearchHomeForm = ({ handleSubmit }) => {
                 Buscar
               </Button>
               <Button className="filters-button" variant="outline-secondary" onClick={toggleAdvancedFilters}>
-                <FaSlidersH /> Filtros 
+                <FaSlidersH /> 
               </Button>
             </div>
           </Col>

@@ -91,7 +91,11 @@ export const Menu = () => {
             <Link to="/venta" className="action-button">Venta</Link>
             <Link to="/alquiler" className="action-button">Alquiler</Link>
             <Link to="/alquiler-temporal" className="action-button">Alquiler temporal</Link>
+            <Button as={Link} to="/login" >
+            Ingresar
+          </Button>
           </Nav>
+          
         </Navbar.Collapse>
       </div>
     </Navbar>

@@ -212,9 +212,10 @@
 }
 
 .seleccion-section {
-  width: 90%;
-  background-color: #ffffff;
+  width: 100%;
+  background: linear-gradient(135deg,var(--secondary-color), var(--primary-color) );
   margin: 0 auto;
+  padding-inline:120px ;
   position: relative;
 }
 
@@ -422,6 +423,9 @@
 /* mobile de seccion de contacto */
 
 @media screen and (max-width: 992px) {
+  .seleccion-section {
+    height: 10vh;
+  }
   .container-form-serch {
     height: 80vh;
     align-items: flex-start;
@@ -435,6 +439,9 @@
     flex-direction: column;
     position: relative;
     z-index: 9999999;
+  }
+  .hero-wrapper {
+    height: 65vh;
   }
   .hero-wrapper .overlay {
     position: absolute;

@@ -16,10 +16,7 @@
   align-items: center;
   flex-direction: row;
   padding: 0px 100px;
-  background: rgba(228, 226, 226, 0.5) !important;
-  backdrop-filter: blur(10px); /* Efecto de desenfoque */
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: white;
 }
 
 .input-nav-icon-wrapper {
@@ -37,14 +34,14 @@ right: 10px;
 }
 .menu-config {
   color:#6495ED ;
-  width: 250px;
+  width: 450px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
 }
 .action-button {
-  color:#ffffff;
+  color:#6495ED;
 }
 .navbar-collapse {
   width: 200px;

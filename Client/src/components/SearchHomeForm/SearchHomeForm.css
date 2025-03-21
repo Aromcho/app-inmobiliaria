@@ -92,7 +92,8 @@
 .filters-button {
   flex: 0.5;
   border: 1px solid var(--primary-color);
-  color: #333;
+  color: #ffffff;
+  font-weight: bold;
   border-radius: 10px;
 }
 .filters-button:hover {

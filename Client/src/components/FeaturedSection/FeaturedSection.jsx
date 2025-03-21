@@ -39,22 +39,22 @@ const FeaturedSection = () => {
 
   return (
     <div className="featured-section">
-      {propertyTypes.map(({ type, title, icon }) => (
+      {propertyTypes.map(({ type, title, icon }, index) => (
         <div key={type} className="section-container">
           <div className="section-title-cont">
             <div className="section-title-icon">{icon}</div>
             <h2 className="section-title">{title}</h2>
           </div>
           {loading[type] ? (
-            <div className="card-scroll">
-              {Array.from({ length: 5 }).map((_, index) => (
-                <SkeletonCard key={index} />
+            <div className={`card-scroll ${index % 2 === 0 ? 'scroll-left' : 'scroll-right'}`}>
+              {Array.from({ length: 10 }).map((_, idx) => (
+                <SkeletonCard key={idx} />
               ))}
             </div>
           ) : data[type]?.length > 0 ? (
-            <div className="card-scroll">
-              {data[type].map((item) => (
-                <Item key={item._id} property={item} />
+            <div className={`card-scroll ${index % 2 === 0 ? 'scroll-left' : 'scroll-right'}`}>
+              {[...data[type], ...data[type]].map((item, i) => (
+                <Item key={`${item._id}-${i}`} property={item} />
               ))}
             </div>
           ) : (

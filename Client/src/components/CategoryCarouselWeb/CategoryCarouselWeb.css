@@ -1,5 +1,6 @@
 /* Contenedor principal */
 .category-carousel {
+  height: 30vh;
   }
   
   /* 🚀 Versión de Escritorio */
@@ -25,6 +26,10 @@
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
+    background: rgba(228, 226, 226, 0.5); /* Fondo semi-transparente */
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
   }
   
   .category-card:hover {
@@ -40,7 +45,8 @@
   .category-label {
     font-size: 14px;
     font-weight: 500;
-    color: #333;
+    color: #ffffff;
+    font-weight: bold;
   }
   
   /* 📱 Versión de Móvil */
@@ -51,7 +57,7 @@
     padding: 10px 0;
     gap: 15px;
     position: relative;
-      top: -200px;
+    top: -130px;
   }
   
   .category-scroll {
@@ -60,12 +66,16 @@
   }
   
   .category-card-mobile {
+    
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #fff;
-    border-radius: 10px;
+    background: rgba(228, 226, 226, 0.5); /* Fondo semi-transparente */
+    padding: 10px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */    border-radius: 10px;
     padding: 15px;
     width: 120px;
     height: 120px;
@@ -86,8 +96,8 @@
     margin-top: 10px;
     font-size: 14px;
     font-weight: 500;
-    color: #333;
-  }
+    color: #ffffff;
+    font-weight: bold;  }
   
   /* Scrollbar personalizado */
   .category-mobile::-webkit-scrollbar {
@@ -105,9 +115,12 @@
   
   /* 🎯 Adaptabilidad */
   @media (min-width: 768px) {
+    .category-carousel {
+      height: 30vh;
+      }
     .category-desktop {
       display: block;
-      height: 50vh;
+      height: 10vh;
       position: relative;
       top: -100px;
     }
