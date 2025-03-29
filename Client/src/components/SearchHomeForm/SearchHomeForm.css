@@ -75,7 +75,6 @@
 .search-button {
   flex: 1;
   height: 40px;
-  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 600;
   background-color: var(--secondary-color) !important;

@@ -44,12 +44,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 80vh;
   padding: 0 15px;
   box-sizing: border-box;
   z-index: 4; /* Para estar por encima de la superposición */
 }
-
+.main-title {
+  position: relative;
+  z-index: 1;
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra negra semitransparente para mejorar legibilidad */
+}
 /* Mapa de la sección de abajo */
 .mapa {
   display: flex;
@@ -423,6 +433,9 @@
 /* mobile de seccion de contacto */
 
 @media screen and (max-width: 992px) {
+  .main-title {
+    display: none; /* Sombra negra semitransparente para mejorar legibilidad */
+  }
   .seleccion-section {
     height: 10vh;
   }

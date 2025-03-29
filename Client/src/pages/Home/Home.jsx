@@ -79,6 +79,7 @@ const Home = () => {
       <div className="hero-wrapper">
         <img src="./fondo.jpg" alt="Fondo" className="hero-background" />
         <div className="container-form-serch">
+          <h1 className="main-title">Encontrá tu Hogar ideal</h1>
           <SearchHomeForm formData={filters} setFormData={updateFilters} handleSubmit={handleSubmit} />
         </div>
       </div>
