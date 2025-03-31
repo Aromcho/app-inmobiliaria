@@ -9,6 +9,7 @@ const schema = new Schema ({
     age: { type:Number, require:false },
     name: { type:String, require:true },
     phoneNumber: { type:String, require:false },
+    favorites: [{ type: Types.ObjectId, ref: "properties" }],
 },{
     timestamps: true
 })
