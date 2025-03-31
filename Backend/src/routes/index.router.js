@@ -6,6 +6,7 @@ import articuleRouter from './api/Articule.router.js';
 import sessionsRouter from './api/session.router.js'; // Aquí importas el router de sesiones
 import cookiesRouter from './api/Cookies.router.js';
 import contactRouter from './api/Contact.router.js';
+import {getLocations} from '../controllers/property.controller.js'
 
 const router = express.Router();
 
@@ -16,6 +17,7 @@ router.use('/sessions', sessionsRouter); // Aquí asegúrate de tener las rutas 
 router.use('/user', userRouter);
 router.use('/articule', articuleRouter);
 router.use('/contact', contactRouter);
+router.use('/locations', getLocations);
 
 export default router;
 

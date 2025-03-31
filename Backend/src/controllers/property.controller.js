@@ -383,8 +383,29 @@ const autocompleteProperties = async (req, res) => {
     console.error('Error en autocompletado con Fuse.js:', error);
     res.status(500).json({ message: 'Error en autocompletado con Fuse.js', error });
   }
+ 
 };
 
+const getLocations = async (req, res) => {
+  try {
+    const properties = await Property.find(
+      { geo_lat: { $ne: null }, geo_long: { $ne: null } },
+      { address: 1, geo_lat: 1, geo_long: 1, 'type.name': 1 }
+    ).lean();
+
+    const locations = properties.map(prop => ({
+      address: prop.address,
+      geo_lat: prop.geo_lat,
+      geo_long: prop.geo_long,
+      name: prop.type?.name || 'Propiedad'
+    }));
+
+    res.status(200).json(locations);
+  } catch (error) {
+    console.error('Error al obtener ubicaciones:', error);
+    res.status(500).json({ message: 'Error al obtener ubicaciones', error });
+  }
+};
 
 
 export {
@@ -399,4 +420,5 @@ export {
   getAllPropertyIds,
   getpropertyById,
   autocompleteProperties,
+  getLocations,
 };
